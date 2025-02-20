@@ -3,13 +3,15 @@ import 'package:flutter_app/util/dialog_box.dart';
 import 'package:flutter_app/util/todo_tile.dart';
 
 class TodoPage extends StatefulWidget {
-  const TodoPage({super.key});
+   const TodoPage({super.key});
 
   @override
   State<TodoPage> createState() => _TodoPageState();
 }
 
 class _TodoPageState extends State<TodoPage> {
+    final _controller = TextEditingController() ;
+
      List toDoList = [
       [ "Make turotial " , true ] , 
       [ "Make turotial " , true ] , 
@@ -22,9 +24,11 @@ class _TodoPageState extends State<TodoPage> {
       });
     }
 
-    void createNewTask() { 
-      showDialog(context: context, builder: (context) { 
-       return DialogBox()
+   void createNewTask() { 
+     showDialog(context: context, builder: (context) { 
+       return DialogBox(
+        controller: _controller,
+       );
       } )  ; 
     }
    
@@ -39,7 +43,7 @@ class _TodoPageState extends State<TodoPage> {
                 elevation: 0 ,
               ),
               floatingActionButton: FloatingActionButton( 
-                onPressed: createNewTask , 
+                onPressed: createNewTask ,  
                 child: Icon(Icons.add ),
                 backgroundColor: Colors.yellow ,
                  ),
