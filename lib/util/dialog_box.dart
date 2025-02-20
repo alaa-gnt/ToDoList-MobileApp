@@ -14,7 +14,7 @@ class DialogBox extends StatelessWidget {
           height: 120 ,
           
            child: Column(
-            
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly ,
             children: [
               TextField(
                 controller: controller,

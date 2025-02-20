@@ -10,8 +10,7 @@ class TodoTile extends StatelessWidget {
              , required this.onChange
               , required this.taskComplited
               });
-   
-
+ 
   @override
   Widget build(BuildContext context) {
     return Padding(
